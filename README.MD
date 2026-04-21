@@ -37,26 +37,26 @@ menggunakan Python dan pandas.
 
 ### 4. Machine Learning — Prediksi kepuasan pelanggan
 - Klasifikasi biner: prediksi apakah pelanggan akan memberi rating tinggi (≥4) atau rendah (≤3)
-- Feature engineering: delay_days, delivery_days, is_late, total_price, item_count
-- Random Forest mencapai **AUC 0.856** dan akurasi **87%** di test set
-- `delay_days` dan `is_late` adalah fitur paling dominan — mengkonfirmasi temuan EDA
+- Feature engineering dari data order: `delay_days`, `delivery_days`, `is_late`, `total_price`, `total_freight`, `item_count`, `price_per_item`
+- Dua model dibandingkan: Logistic Regression vs Random Forest
+- `delay_days` dan `is_late` adalah fitur paling dominan — mengkonfirmasi temuan analisis review
 
 ![Evaluasi Model](output/ml-evaluasi-rating.png)
 
 ---
 
 ### 5. Machine Learning — Segmentasi pelanggan RFM
-- Mengelompokkan 96.000+ pelanggan ke 4 segmen menggunakan K-Means clustering
+- Mengelompokkan pelanggan ke beberapa segmen menggunakan K-Means clustering
 - Dimensi RFM: Recency (kapan terakhir beli), Frequency (seberapa sering), Monetary (total belanja)
-- Jumlah cluster optimal K=4 ditentukan dengan Elbow method dan Silhouette score
-- Segmen: **Champions** (12K) · **Loyal** (29K) · **At Risk** (24K) · **Hibernating** (31K)
+- Jumlah cluster optimal ditentukan dengan Elbow method dan Silhouette score
+- Segmen hasil clustering: **Champions** · **Loyal** · **At Risk** · **Hibernating**
 
 ![Segmentasi RFM](output/12-rfm-segmentasi.png)
 
 ---
 
 ## Tech stack
-- Python 3.x · pandas · matplotlib · seaborn · scikit-learn
+- Python 3.9.2 · pandas · matplotlib · seaborn · scikit-learn
 
 ## Cara menjalankan
 1. Download dataset dari [Kaggle Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
